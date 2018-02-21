@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_transformation_orp" name="ORP_Transformation" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="WorkOrderTypeCode" name="WorkOrderTypeCode">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable>
+      <input id="InputClause_0onaxcx" label="Service" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_08qgc5j" typeRef="string">
+          <text>Service</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_101hp90">
+          <text><![CDATA["INTERNET","PSTN","IOT","IPTV"]]></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1p9p8yr" label="OrderType" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1fzobje" typeRef="string">
+          <text>OrderType</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1nazflw">
+          <text><![CDATA["NewInstall","Modify","Resume","Suspend","Terminate"]]></text>
+        </inputValues>
+      </input>
+      <output id="output_1" label="WorkOrderTypeCode" name="WorkOrderTypeCode" typeRef="string">
+        <outputValues id="UnaryTests_0eg05vz">
+          <text><![CDATA["UA","UB","U1","U2","UC","UZ","UI"]]></text>
+        </outputValues>
+      </output>
+      <rule id="row-871638073-1">
+        <description></description>
+        <inputEntry id="UnaryTests_0650ovm">
+          <text><![CDATA["IOT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tg64aq">
+          <text><![CDATA["NewInstall"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1htocid">
+          <text><![CDATA["UA"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-871638073-2">
+        <inputEntry id="UnaryTests_05sq72h">
+          <text><![CDATA["IOT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18ot1c2">
+          <text><![CDATA["Terminate"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_180l2go">
+          <text><![CDATA["UB"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="table-48951129-1">
+        <inputEntry id="UnaryTests_1w4hvc5">
+          <text><![CDATA["IOT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_059w35c">
+          <text><![CDATA["Suspend"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04i4kro">
+          <text><![CDATA["U1"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="table-48951129-2">
+        <inputEntry id="UnaryTests_1d1tln2">
+          <text><![CDATA["IOT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ajj3vs">
+          <text><![CDATA["Resume"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lzpj7n">
+          <text><![CDATA["U2"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="table-48951129-3">
+        <inputEntry id="UnaryTests_1y4xc3l">
+          <text><![CDATA["IOT"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0konfuw">
+          <text><![CDATA["Modify"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bcwiuy">
+          <text><![CDATA["UI"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_Workflow" name="Workflow_definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Workflow" name="Workflow">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable">
+      <input id="input1" label="WorkOrderTypeCode" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>WorkOrderTypeCode</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_03p5wby">
+          <text><![CDATA["UA","UB","U1","U2","UC","UI"]]></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_172cznl" label="ConsolidateUpdateTypeCode" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1onkruh" typeRef="string">
+          <text>ConsolidateUpdateTypeCode</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0yd21vt">
+          <text><![CDATA["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25"]]></text>
+        </inputValues>
+      </input>
+      <output id="OutputClause_0dmi2lq" label="isLogicalDesignRequired" name="isLogicalDesignRequired" typeRef="string">
+        <outputValues id="UnaryTests_04zs9al">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_170mjyt" label="isPhysicalDesignRequired" name="isPhysicalDesignRequired" typeRef="string">
+        <outputValues id="UnaryTests_0begmro">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0t2386n" label="isWorkforceManagementRequired" name="isWorkforceManagementRequired" typeRef="string">
+        <outputValues id="UnaryTests_0sfqrjs">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1jk5roo" label="isFacilityConfirmationRequired" name="isFacilityConfirmationRequired" typeRef="string">
+        <outputValues id="UnaryTests_0zug3me">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_15nb50e" label="isResourceActivationRequired" name="isResourceActivationRequired" typeRef="string">
+        <outputValues id="UnaryTests_0jb8kja">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1x002df" label="isFulfillmentConfirmationRequired" name="isFulfillmentConfirmationRequired" typeRef="string">
+        <outputValues id="UnaryTests_1vrk98i">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_0ujmpqu" label="isMasterUpdateRequired" name="isMasterUpdateRequired" typeRef="string">
+        <outputValues id="UnaryTests_06801vl">
+          <text><![CDATA["true","false"]]></text>
+        </outputValues>
+      </output>
+      <rule id="row-290328563-1">
+        <description></description>
+        <inputEntry id="UnaryTests_0x6c3lu">
+          <text><![CDATA["UA"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zij0w1">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ugkpto">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e5qllx">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10doeiz">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18gykb7">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vwxpxv">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11o8lxt">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xldeao">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-2">
+        <inputEntry id="UnaryTests_0yjsxir">
+          <text><![CDATA["UB"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_157ra9m">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16v83me">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04n2iuw">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cgxd1u">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w6u8m9">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ml0esq">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zn6p8j">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15modvg">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-3">
+        <inputEntry id="UnaryTests_0iz0mza">
+          <text><![CDATA["U1"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15odlvr">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06in58n">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xf0gbf">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e9vjho">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t3s3g8">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b9jpii">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x7t85l">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d3lc8l">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-4">
+        <inputEntry id="UnaryTests_1c98vl8">
+          <text><![CDATA["U2"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07ba44w">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qmh4sj">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jv5c0h">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wwpf1q">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13omgte">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1blqgp7">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nhtv9m">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15rt9bi">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-5">
+        <inputEntry id="UnaryTests_1komxm8">
+          <text><![CDATA["UC"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qomoqk">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12o4x0e">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cnrqow">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ydmjfk">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v6wk32">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ieflz1">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_034e7vx">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_080pls5">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-6">
+        <inputEntry id="UnaryTests_0ohks0c">
+          <text><![CDATA["UI"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vkrgba">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02yvo24">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a9fc1z">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l9bqwh">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mjkxr6">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pdls7v">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tgykwe">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yb17z9">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-290328563-7">
+        <inputEntry id="UnaryTests_0ttgvvl">
+          <text><![CDATA[not("UB", "UA", "U1", "U2", "UC", "UI")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xah6x4">
+          <text><![CDATA[not("00")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14b7jkx">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wjd31a">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08jehc1">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gjg4yl">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qgqh7y">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vgchf3">
+          <text><![CDATA["false"]]></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iqid8e">
+          <text><![CDATA["true"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <bpmn:error id="Error_031wbwl" name="ORP_VALIDATION_ERR1" errorCode="ORP_VALIDATION_ERR1" />
+  <bpmn:error id="Error_0ieh4in" name="Error_3inku2q" />
+  <bpmn:error id="Error_1ceqwgd" name="ORP_VALIDATION_ERR1" errorCode="ORP_VALIDATION_ERR1" />
+  <bpmn:process id="ompocprepare" name="ompocprepare" isExecutable="true">
+    <bpmn:endEvent id="EndEventProcessEnded" name="Process&#10;ended">
+      <bpmn:incoming>SequenceFlow_0g3uyef</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0j90v28" sourceRef="StartEventProcessStarted_1" targetRef="Task_0gi92ch" />
+    <bpmn:sequenceFlow id="SequenceFlow_0ee4u9i" sourceRef="Task_0gi92ch" targetRef="Task_0vwtk7i" />
+    <bpmn:sequenceFlow id="SequenceFlow_0g3uyef" sourceRef="Task_0vwtk7i" targetRef="EndEventProcessEnded" />
+    <bpmn:userTask id="Task_0vwtk7i" name="TestTask2">
+      <bpmn:incoming>SequenceFlow_0ee4u9i</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0g3uyef</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="StartEventProcessStarted_1" name="Process started_1">
+      <bpmn:outgoing>SequenceFlow_0j90v28</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_03r14h7" />
+    </bpmn:startEvent>
+    <bpmn:sendTask id="Task_0gi92ch" name="TestTask" camunda:class="com.kt.om.poc.prepare.ompocprepare.LoggerDelegate">
+      <bpmn:incoming>SequenceFlow_0j90v28</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ee4u9i</bpmn:outgoing>
+    </bpmn:sendTask>
+  </bpmn:process>
+  <bpmn:message id="Message_03r14h7" name="ServiceOrder_Message" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="ompocprepare">
+      <bpmndi:BPMNShape id="EndEvent_0fkea3f_di" bpmnElement="EndEventProcessEnded">
+        <dc:Bounds x="1175" y="315" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1173" y="351" width="41" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0j90v28_di" bpmnElement="SequenceFlow_0j90v28">
+        <di:waypoint xsi:type="dc:Point" x="457" y="333" />
+        <di:waypoint xsi:type="dc:Point" x="576" y="333" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="471.5" y="312" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ee4u9i_di" bpmnElement="SequenceFlow_0ee4u9i">
+        <di:waypoint xsi:type="dc:Point" x="676" y="333" />
+        <di:waypoint xsi:type="dc:Point" x="810" y="333" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="743" y="312" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0g3uyef_di" bpmnElement="SequenceFlow_0g3uyef">
+        <di:waypoint xsi:type="dc:Point" x="910" y="333" />
+        <di:waypoint xsi:type="dc:Point" x="1175" y="333" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1042.5" y="312" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_161pz5g_di" bpmnElement="Task_0vwtk7i">
+        <dc:Bounds x="810" y="293" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0mlvr89_di" bpmnElement="StartEventProcessStarted_1">
+        <dc:Bounds x="421" y="315" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="417" y="351" width="46" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SendTask_19bff6e_di" bpmnElement="Task_0gi92ch">
+        <dc:Bounds x="576" y="293" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

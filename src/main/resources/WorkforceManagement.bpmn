@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+  <bpmn:process id="WorkforceManagementProcess_Process" name="Workforce Management Process" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_038zie3">
+      <bpmn:outgoing>SequenceFlow_0w2321x</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_01sw4oe">
+      <bpmn:incoming>SequenceFlow_0v133ms</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="UserTask_1t0duhj" name="WorkforceManagementReceiver">
+      <bpmn:incoming>SequenceFlow_18as5cq</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0v133ms</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sendTask id="SendTask_0r7d2rf" name="WorkforceManagementSender" camunda:class="com.kt.om.poc.prepare.ompocprepare.LoggerDelegate">
+      <bpmn:incoming>SequenceFlow_0w2321x</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_18as5cq</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0w2321x" sourceRef="StartEvent_038zie3" targetRef="SendTask_0r7d2rf" />
+    <bpmn:sequenceFlow id="SequenceFlow_0v133ms" sourceRef="UserTask_1t0duhj" targetRef="EndEvent_01sw4oe" />
+    <bpmn:sequenceFlow id="SequenceFlow_18as5cq" sourceRef="SendTask_0r7d2rf" targetRef="UserTask_1t0duhj" />
+  </bpmn:process>
+  <bpmn:message id="Message_07n4drw" name="IDMS_Message" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="WorkforceManagementProcess_Process">
+      <bpmndi:BPMNShape id="StartEvent_038zie3_di" bpmnElement="StartEvent_038zie3">
+        <dc:Bounds x="883" y="375" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="901" y="415" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_01sw4oe_di" bpmnElement="EndEvent_01sw4oe">
+        <dc:Bounds x="1334" y="375" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1352" y="415" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_1t0duhj_di" bpmnElement="UserTask_1t0duhj">
+        <dc:Bounds x="1173" y="353" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SendTask_0r7d2rf_di" bpmnElement="SendTask_0r7d2rf">
+        <dc:Bounds x="1007" y="353" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0w2321x_di" bpmnElement="SequenceFlow_0w2321x">
+        <di:waypoint xsi:type="dc:Point" x="919" y="393" />
+        <di:waypoint xsi:type="dc:Point" x="1007" y="393" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="963" y="372" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0v133ms_di" bpmnElement="SequenceFlow_0v133ms">
+        <di:waypoint xsi:type="dc:Point" x="1273" y="393" />
+        <di:waypoint xsi:type="dc:Point" x="1334" y="393" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1303.5" y="372" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_18as5cq_di" bpmnElement="SequenceFlow_18as5cq">
+        <di:waypoint xsi:type="dc:Point" x="1107" y="393" />
+        <di:waypoint xsi:type="dc:Point" x="1173" y="393" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1140" y="372" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
